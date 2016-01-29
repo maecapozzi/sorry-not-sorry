@@ -1,37 +1,23 @@
-// highlights the word sorry on the page. 
-
-// searches the entire document 
-// if it finds the word that matches "sorry", "Sorry", or "SORRY", it highlights that word
-
-//when the button is clicked, needs to take all of the text in the div
-//put that text into an array 
-// loop through all of the words 
-//check to see if a word matches "sorry". 
-// If the word matches, highlight the word. 
-
-var grabText = function(){ 
+ var grabText = function(){ 
   var text = $(".Am").text();
   var textArray = text.split(" ")
   return textArray
 }
 
-var highlightWord = function(string){ 
-  
-}
-
 var findSorry = function(array){ 
+  var counter = 0 
   for (var i = 0; i < array.length; i++) {
     if ( /sorry/.test(array[i]) ){ 
-      console.log("yes");
+      counter++;
     } else if ( /Sorry/.test(array[i])){ 
-      console.log("yes");
+      counter++;
     } else if ( /SORRY/.test(array[i])){ 
-      console.log("yes");
+      counter++;
     }
     else { 
-      console.log("no");
     }
   };
+  alert("You have used the word 'sorry' " +counter+ " times!");
 }
 
 
@@ -47,9 +33,6 @@ chrome.runtime.onMessage.addListener(
 );
 
 
-// var doc = document.getElementsByClassName("Am");
-// debugger
-// // var text = doc[0].innerHTML.split(" "); 
 
 
 
