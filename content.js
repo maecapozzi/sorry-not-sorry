@@ -15,12 +15,16 @@ var grabText = function(){
   return textArray
 }
 
-var cleanText = function(){ 
-  var array = grabText(); 
-  return array
-}
 
 var findSorry = function(array){ 
+  for (var i = 0; i < array.length; i++) {
+    if ( /sorry/.test(array[i]) ){ 
+      console.log("yes");
+    }
+    else { 
+      console.log("no");
+    }
+  };
   //loop through the array
   //if the word matches the regex for "sorry", highlight it
   //  
@@ -34,7 +38,8 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "clicked_browser_action" ) {
       
-      cleanText(); 
+      var arrayOfWords = grabText(); 
+      findSorry(arrayOfWords);
 
     }
   }
