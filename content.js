@@ -9,14 +9,41 @@
 //check to see if a word matches "sorry". 
 // If the word matches, highlight the word. 
 
+var grabText = function(){ 
+  var text = $(".Am").text();
+  var textArray = text.split(" ")
+  return textArray
+}
+
+var cleanText = function(){ 
+  var array = grabText(); 
+  return array
+}
+
+var findSorry = function(array){ 
+  //loop through the array
+  //if the word matches the regex for "sorry", highlight it
+  //  
+}
+
+var highlightWord = function(string){ 
+
+}
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if( request.message === "clicked_browser_action" ) {
+      
+      cleanText(); 
+
+    }
+  }
+);
 
 
-var doc = document.getElementsByClassName("Am");
-debugger
-// var text = doc[0].innerHTML.split(" "); 
-
-$(".z0").click(function(){ 
+// var doc = document.getElementsByClassName("Am");
+// debugger
+// // var text = doc[0].innerHTML.split(" "); 
 
 
 
-});
