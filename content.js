@@ -15,24 +15,25 @@ var grabText = function(){
   return textArray
 }
 
+var highlightWord = function(string){ 
+  
+}
 
 var findSorry = function(array){ 
   for (var i = 0; i < array.length; i++) {
     if ( /sorry/.test(array[i]) ){ 
+      console.log("yes");
+    } else if ( /Sorry/.test(array[i])){ 
+      console.log("yes");
+    } else if ( /SORRY/.test(array[i])){ 
       console.log("yes");
     }
     else { 
       console.log("no");
     }
   };
-  //loop through the array
-  //if the word matches the regex for "sorry", highlight it
-  //  
 }
 
-var highlightWord = function(string){ 
-
-}
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
